@@ -6,8 +6,17 @@ var e = function(selector) {
 	return document.querySelector(selector)
 }
 
-var bindEvent = function(element, event, callback) {
-	return element.addEventListener(event, callback)
+var bindEvent = function(element, eventName, callback) {
+	element.addEventListener(eventName, callback)
+}
+
+// 这是简化版的bindAll, 遍历给每个元素都绑上
+var bindAll = function(selector, eventName, callback) {
+	var elements = document.querySelectorAll(selector)
+	for (var i = 0; i < elements.length; i++) {
+		var e = elements[i]
+		bindEvent(e, eventName, callback)
+	};
 }
 
 
@@ -17,4 +26,12 @@ var toggleClass = function(className, element) {
 	} else {
 		element.classList.add(className)
 	}
+}
+
+var appendHTML = function(element, html) {
+	element.insertAdjacent('beforeend', html)
+}
+
+var findElement = function(element, selector) {
+	return element.querySelector(selector)
 }
