@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>carousel</title>
+	
+	<style>
+		.container {
+			position: relative;
+			width: 590px;
+		}
+		.hua-imgs {
+			display: none;
+		}
+		.active {
+			display: block;
+		}
+		.vertical-center {
+			position: absolute;
+			top:50%;
+			transform: translateY(-50%);
+		}
+		.horizon-center {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		#id-btn-next {
+			right: 0px;
+		}
+		.hua-indicators {
+			position: absolute;
+			bottom: 10px;
+			margin: 0 auto;
+		}
+		.hua-indi {
+			display: inline-block;
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			background: red;
+		}
+		.white {
+			background: white;
+		}
+	</style>
+	<script src="hua3.js"></script>
+</head>
+<body>
+	<div class="container" data-imgs=3 data-active=0>
+		<img class="hua-imgs active" id="hua-imgs-0" src="1.jpg" alt="1">
+		<img class="hua-imgs" id="hua-imgs-1" src="2.jpg" alt="2">
+		<img class="hua-imgs" id="hua-imgs-2" src="3.jpg" alt="3">
+		<button id="id-btn-pre" class="vertical-center">上一张</button>
+		<button id="id-btn-next" class="vertical-center">下一张</button>
+		<div class="hua-indicators horizon-center">
+			<div id="id-indi-0" class="hua-indi white"></div>
+			<div id="id-indi-1" class="hua-indi"></div>
+			<div id="id-indi-2" class="hua-indi"></div>
+		</div>
+	</div>
+	<script src="main3.js"></script>
+</body>
+</html>
