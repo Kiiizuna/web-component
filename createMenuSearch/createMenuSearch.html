@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>create menu search</title>
+	<link rel="stylesheet" type="text/css" href="common.css">
+	<script src="jie3.js" type="text/javascript"></script>
+	<style type="text/css">
+		#all li a:hover{
+			background-color: gray;
+			color: white;
+		}
+		#all li a {
+			display: block;
+		}
+		.j-container {
+			display: flex;
+		}
+		.left {
+			max-width: 200px;
+		}
+		.j-content {
+			flex: 1;
+		}
+		.show {
+			display: block;
+		}
+		.hidden {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<section class="j-container">
+		<div class="left">
+			<h2>menu</h2>
+			<input id='id-input'>
+			<ul id='all'>
+				<li><a href="">js</a></li>
+				<li><a href="">http</a></li>
+				<li><a href="">com</a></li>
+				<li><a href="">node</a></li>
+				<li><a href="">electron</a></li>
+				<li><a href="">php</a></li>
+				<li><a href="">java</a></li>
+				<li><a href="">2325087</a></li>
+				<li><a href="">2321666</a></li>
+				<li><a href="">2325631</a></li>
+			</ul>
+		</div>
+		<div class="j-content">
+			<p>......</p>
+		</div>
+	</section>
+	<script type="text/javascript">
+		const search = function() {
+			var val = e('#id-input').value.toUpperCase()
+			log("val is",val)
+			var li = es('li')
+			log(li)
+			var len = li.length
+			log("len", len)
+			var core
+			var coreHTML = ''
+			for (var i = 0; i < len; i++) {
+				core = findElement(li[i], "a")
+				log("core", core)
+				coreHTML = core.innerHTML
+				// var core = li[i].childElement.innerHTML
+				log('judge', coreHTML.toUpperCase().indexOf(val))
+				if ( val === '') {
+					removeClassAll('hidden')
+				}
+				if (coreHTML.toUpperCase().indexOf(val) > -1) {
+					// li[i].classList.add('block')
+				} else {
+					li[i].classList.add('hidden')
+				}
+			}
+		}
+		
+		var inputBtn = e('#id-input')
+		bindEvent(inputBtn, 'keyup', function(event) {
+			search()
+		})
+	</script>
+</body>
+</html>
