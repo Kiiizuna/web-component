@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>progress bar</title>
+	<style>
+		.progress {
+			width: 100%;
+			background-color: gray;
+		}
+		.bar {
+			width: 1%;
+			height: 20px;
+			background-color: lightblue;
+		}
+	</style>
+	<script src="jie3.js"></script>
+</head>
+<body>
+	<div class="progress">
+		<div class="bar"></div>
+	</div>
+	<br>
+	<button id="id-btn">click and show the progress</button>
+	<br>
+	<p>用setInterval 控制连续加宽度的css 的值来实现</p>
+	<script>
+		var showProgress = function() {
+			var btn = e('#id-btn')
+			bindEvent(btn, 'click', function() {
+				total()
+			})
+			var total = function() {
+				var w = 1 
+				var bar = e('.bar')
+				var id = setInterval(move, 10)
+				function move() {
+					if (w >= 100) {
+						clearInterval(id)
+					} else {
+						w++
+						bar.style.width = w + '%'
+					}
+				}
+			// var id = setInterval(move(), 1000)
+			}
+		}
+		showProgress()
+
+
+
+	</script>
+</body>
+</html>
