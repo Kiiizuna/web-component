@@ -50,12 +50,37 @@ var __carousel = function() {
 	// 给上一张绑定事件
 	bindAll('#id-btn-pre', 'click', function(event) {
 		log('pre click')
+		prevPic()
+		// var f = event.target.parentElement	
+		// var imgActiveIndex = parseInt(f.dataset.active )
+		// var imgNumbers = parseInt(f.dataset.imgs)
+		// var preIndex = new Number()
+		// if (imgActiveIndex === 0) {
+		// 	preIndex = 2
+		// } else {
+		// 	preIndex = imgActiveIndex - 1
+		// }
+		// f.dataset.active = preIndex
+		// var preSelector = "#hua-imgs-" + String(preIndex)
+		// var className = 'active'
+		// removeClassAll(className)
+		// var preClass = e(preSelector)
+		// preClass.classList.add(className)
+		// // 当点击上一张时, indi 随着图片一起变化
+		// var classNameIndi = 'white'
+		// removeClassAll(classNameIndi)
+		// var preIndiSelector = "#id-indi-" + preIndex
+		// var target = e(preIndiSelector)
+		// target.classList.add(classNameIndi)
+	})	
+
+	var prevPic = function() {
 		var f = event.target.parentElement	
 		var imgActiveIndex = parseInt(f.dataset.active )
 		var imgNumbers = parseInt(f.dataset.imgs)
 		var preIndex = new Number()
 		if (imgActiveIndex === 0) {
-			preIndex = 2
+			preIndex = imgNumbers - 1
 		} else {
 			preIndex = imgActiveIndex - 1
 		}
@@ -71,7 +96,7 @@ var __carousel = function() {
 		var preIndiSelector = "#id-indi-" + preIndex
 		var target = e(preIndiSelector)
 		target.classList.add(classNameIndi)
-	})	
+	}
 
 	// 给indicator 绑定事件
 	//1, 给点击到的div 加上.white class
@@ -127,7 +152,6 @@ var __carousel = function() {
 	})
 
 }
-
 
 // 调用轮播
 __carousel()
