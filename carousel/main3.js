@@ -73,7 +73,6 @@ var __carousel = function() {
 		// var target = e(preIndiSelector)
 		// target.classList.add(classNameIndi)
 	})	
-
 	var prevPic = function() {
 		var f = event.target.parentElement	
 		var imgActiveIndex = parseInt(f.dataset.active )

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>modal</title>
+	<style>
+		.hidden {
+			display: none;
+		}
+		.show {
+			display: block;
+		}
+		.modal {
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			background-color: rgba(0,0,0,0.4);
+			z-index: 1;
+			position: fixed;
+		}
+		.modal-context {
+			width: 80%;
+			border: 1px solid #888;
+			margin: 30% auto;
+			padding: 30px;
+			background-color: #fefefe;
+		}
+		.close {
+			float: right;
+			font-size: 25px;
+			font-weight: bold;
+			color: #aaa;
+		}
+		.close:hover {
+			cursor: pointer;
+			color: black;
+			text-decoration: none;
+		}
+	</style>
+	<script src="jie3.js"></script>
+</head>
+<body>
+	<button class="button">open modal</button>
+	<div class="modal hidden">
+		<div class="modal-context">
+		<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis.</span>
+		<span class="close">X</span>
+		</div>
+	</div>
+	<script src="main.js"></script>
+</body>
+</html>
