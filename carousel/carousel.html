@@ -25,6 +25,12 @@
 			position: absolute;
 			top:50%;
 			transform: translateY(-50%);
+			cursor: pointer;
+			color:white;
+			font-weight: bold;
+			padding: 16px;
+			transition:0.6s ease;
+			border-radius: 0 6px 6px 0;
 		}
 		.horizon-center {
 			position: absolute;
@@ -33,7 +39,15 @@
 		}
 		#id-btn-next {
 			right: 0px;
+			border-radius: 6px 0 0 6px;
 		}
+		#id-btn-pre:hover {
+			background-color: rgba(0,0,0,0.7);
+		}
+		#id-btn-next:hover {
+			background-color: rgba(0,0,0,0.7);
+		}
+
 		.hua-indicators {
 			position: absolute;
 			bottom: 10px;
@@ -58,8 +72,8 @@
 		<img class="hua-imgs active" id="hua-imgs-0" src="1.jpg" alt="1">
 		<img class="hua-imgs" id="hua-imgs-1" src="2.jpg" alt="2">
 		<img class="hua-imgs" id="hua-imgs-2" src="3.jpg" alt="3">
-		<button id="id-btn-pre" class="vertical-center"><</button>
-		<button id="id-btn-next" class="vertical-center">></button>
+		<a id="id-btn-pre" class="vertical-center"><</a>
+		<a id="id-btn-next" class="vertical-center">></a>
 		<div class="hua-indicators horizon-center">
 			<div id="id-indi-0" class="hua-indi white"></div>
 			<div id="id-indi-1" class="hua-indi"></div>
