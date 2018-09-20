@@ -64,14 +64,32 @@
 		.white {
 			background: white;
 		}
+
+		/* 淡出动画 */
+		.fade {
+		  -webkit-animation-name: fade;
+		  -webkit-animation-duration: 1.5s;
+		  animation-name: fade;
+		  animation-duration: 1.5s;
+		}
+		 
+		@-webkit-keyframes fade {
+		  from {opacity: .4} 
+		  to {opacity: 1}
+		}
+
+		@keyframes fade {
+		  from {opacity: .4} 
+		  to {opacity: 1}
+		}
 	</style>
 	<script src="hua3.js"></script>
 </head>
 <body>
 	<div class="container" data-imgs=3 data-active=0>
-		<img class="hua-imgs active" id="hua-imgs-0" src="1.jpg" alt="1">
-		<img class="hua-imgs" id="hua-imgs-1" src="2.jpg" alt="2">
-		<img class="hua-imgs" id="hua-imgs-2" src="3.jpg" alt="3">
+		<img class="hua-imgs active fade" id="hua-imgs-0" src="1.jpg" alt="1">
+		<img class="hua-imgs fade" id="hua-imgs-1" src="2.jpg" alt="2">
+		<img class="hua-imgs fade" id="hua-imgs-2" src="3.jpg" alt="3">
 		<a id="id-btn-pre" class="vertical-center"><</a>
 		<a id="id-btn-next" class="vertical-center">></a>
 		<div class="hua-indicators horizon-center">
