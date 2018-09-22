@@ -6,6 +6,10 @@ var e = function(selector) {
 	return document.querySelector(selector)
 }
 
+var es = function(selector) {
+	return document.querySelectorAll(selector)
+}
+
 var bindEvent = function(element, eventName, callback) {
 	element.addEventListener(eventName, callback)
 }
@@ -34,4 +38,14 @@ var appendHTML = function(element, html) {
 
 var findElement = function(element, selector) {
 	return element.querySelector(selector)
+}
+
+
+var removeClassAll = function(className) {
+	var selector = '.' + className
+	var elements = document.querySelectorAll(selector)
+	for (var i = 0; i < elements.length; i++) {
+		var e = elements[i]
+		e.classList.remove(className)
+	}
 }

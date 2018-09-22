@@ -3,25 +3,51 @@
 <head>
 	<meta charset="UTF-8">
 	<title>clickShowMore</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
 	<script src='hua.js'></script>
 	<style>
+		* {
+			box-sizing:border-box;
+		}
+		html, body {
+			background: #eee;
+			margin: 0px;
+			padding: 0px;
+		}
+		body {
+			padding-top: 80px;
+		}
+		.container {
+			width: 500px;
+			margin: 7px auto;
+			transition: 0.5s;
+		}
+		.btn {
+			padding: 20px;
+			background: #00C37E;
+			color: #fff;
+			cursor: pointer;
+			width: 100%;
+		}
 		.content {
 			border: 1px solid red;
 			height: 200px;
 			width: 200px;
+			transition:0.35s;
 		}
 		.hidden {
 			display: none;
+			transition:0.35s;
 		}
 	</style>
 </head>
 <body>
-	<div class="menu">
-		<button class="btn">点击显示详情</button>
-		<div class="content hidden">内容</div>
+	<div class="container">
+		<div class="btn">点击显示详情</div>
+		<div class="content hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, fugiat!</div>
 	</div>
-	<div class="menu">
-		<button class="btn">点击显示详情</button>
+	<div class="container">
+		<div class="btn">点击显示详情</div>
 		<div class="content hidden">内容</div>
 	</div>
 	<script src='main.js'></script>
