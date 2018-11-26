@@ -1,0 +1,61 @@
+
+
+.style1 {
+    text-align: center;
+    width: 100px;
+    margin: 0 auto;
+}
+.shape1 {
+	background-color: #03a9f4;
+	height: 100px;
+	width: 100px;
+	animation: shape1 2.5s infinite ease-in-out;
+    margin: 60px auto;
+    /*transform-style: preserve-3d;*/
+}
+/*.style1 {
+    perspective: 1200px;
+}*/
+@keyframes shape1 {
+	0% {
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg); 
+    }
+    50% {
+        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg); 
+    }
+    100% {
+        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg); 
+    }
+}
+
+
+.circle-container {
+    width: 100px;
+    height: 100px;
+    margin: 60px auto;
+    position: relative;
+}
+
+.circle-container .child {
+    background-color: #03a9f4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: circle-container 2s infinite ease-in-out;
+}
+.circle-container .circle2 {
+    animation-delay: -1.0s;
+}
+
+@keyframes circle-container {
+    0%, 100% {
+        transform: scale(0);
+    }
+    50% {
+        transform:scale(1);
+    }
+}
